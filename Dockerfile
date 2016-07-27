@@ -9,7 +9,7 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
     cd /tmp/src && \
     wget http://nginx.org/download/${NGINX_VERSION}.tar.gz && \
     tar -zxvf ${NGINX_VERSION}.tar.gz && \
-    git clone git clone git://github.com/alibaba/nginx-http-concat.git /tmp/nginx-http-concat && \
+    git clone git://github.com/alibaba/nginx-http-concat.git /tmp/nginx-http-concat && \
     cd /tmp/src/${NGINX_VERSION} && \
     ./configure \
         --add-module=/tmp/nginx-http-concat \
