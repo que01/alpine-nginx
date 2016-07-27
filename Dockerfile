@@ -23,6 +23,7 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
     make install && \
     apk del build-base && \
     rm -rf /tmp/src && \
+    rm -rf /tmp/nginx-http-concat && \
     rm -rf /var/cache/apk/*
 
 # forward request and error logs to docker log collector
