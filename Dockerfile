@@ -9,10 +9,10 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
     cd /tmp/src && \
     wget http://nginx.org/download/${NGINX_VERSION}.tar.gz && \
     tar -zxvf ${NGINX_VERSION}.tar.gz && \
-    git clone git://github.com/alibaba/nginx-http-concat.git /tmp/nginx-http-concat && \
+    git clone git://github.com/alibaba/nginx-http-concat.git /root/nginx/nginx-http-concat && \
     cd /tmp/src/${NGINX_VERSION} && \
     ./configure \
-        --add-module=/tmp/nginx-http-concat \
+        --add-module=/root/nginx/nginx-http-concat \
         --with-http_ssl_module \
         --with-http_gzip_static_module \
         --prefix=/etc/nginx \
@@ -23,7 +23,6 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
     make install && \
     apk del build-base && \
     rm -rf /tmp/src && \
-    rm -rf /tmp/nginx-http-concat && \
     rm -rf /var/cache/apk/*
 
 # forward request and error logs to docker log collector
