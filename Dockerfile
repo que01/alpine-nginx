@@ -12,13 +12,13 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
     git clone git://github.com/alibaba/nginx-http-concat.git /root/nginx/nginx-http-concat && \
     cd /tmp/src/${NGINX_VERSION} && \
     ./configure \
-        --add-module=/root/nginx/nginx-http-concat \
         --with-http_ssl_module \
         --with-http_gzip_static_module \
         --prefix=/etc/nginx \
         --http-log-path=/var/log/nginx/access.log \
         --error-log-path=/var/log/nginx/error.log \
         --sbin-path=/usr/local/sbin/nginx && \
+        --add-module=/root/nginx/nginx-http-concat \
     make && \
     make install && \
     apk del build-base && \
