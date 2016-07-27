@@ -17,8 +17,8 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
         --prefix=/etc/nginx \
         --http-log-path=/var/log/nginx/access.log \
         --error-log-path=/var/log/nginx/error.log \
-        --sbin-path=/usr/local/sbin/nginx && \
-        --add-module=/root/nginx/nginx-http-concat \
+        --sbin-path=/usr/local/sbin/nginx  \
+        --add-module=/root/nginx/nginx-http-concat && \
     make && \
     make install && \
     apk del build-base && \
