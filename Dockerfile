@@ -21,7 +21,7 @@ RUN apk --update add git openssl-dev pcre-dev zlib-dev wget build-base && \
         --add-module=/root/nginx/nginx-http-concat && \
     make && \
     make install && \
-    apk del build-base git wget pcre-dev zlib-dev && \
+    apk del build-base git wget && \
     rm -rf /tmp/src && \
     rm -rf /var/cache/apk/*
 
